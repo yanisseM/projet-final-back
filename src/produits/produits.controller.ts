@@ -24,10 +24,10 @@ export class ProduitsController{
     }
 
     // @UseGuards(AuthentificationGuard)
-    // // @Delete(':id')
-    // // deleteProduit(@Param('id') produitId:number){
-    // //     return this.produitService.deleteProduit(produitId);
-    // // }
+    @Delete(':id')
+    deleteProduit(@Param('id') produitId:number){
+        return this.produitService.deleteProduit(produitId);
+    }
     
 
 }

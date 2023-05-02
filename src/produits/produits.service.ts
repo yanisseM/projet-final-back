@@ -35,5 +35,4 @@ export class ProduitService{
            return ; 
         
          }
-    // async deleteProduit(id : number ): Promise
 }
