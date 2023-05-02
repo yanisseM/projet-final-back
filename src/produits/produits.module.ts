@@ -8,4 +8,4 @@ import { ProduitRepository } from './repositories/produit.repository';
   controllers: [ProduitsController],
   providers: [ProduitService, ProduitRepository],
 })
-export class ProductsModule {}
+export class ProduitsModule {}

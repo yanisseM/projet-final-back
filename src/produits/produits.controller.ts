@@ -23,11 +23,11 @@ export class ProduitsController{
         return this.produitService.createProduit(produit);
     }
 
-    @UseGuards(AuthentificationGuard)
-    @Delete(':id')
-    deleteProduit(@Param('id') produitId:number){
-        return this.produitService.deleteProduit(produitId);
-    }
+    // @UseGuards(AuthentificationGuard)
+    // // @Delete(':id')
+    // // deleteProduit(@Param('id') produitId:number){
+    // //     return this.produitService.deleteProduit(produitId);
+    // // }
     
 
 }

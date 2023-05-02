@@ -1,5 +1,5 @@
 import { ProduitCategoryEnum } from "../enum/produit-category.enum";
-
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Produit{
     @PrimaryGeneratedColumn()
@@ -17,6 +17,6 @@ export class Produit{
     @Column()
     price : number;
 
-    @Colummn()
+    @Column()
     size : string;
 }

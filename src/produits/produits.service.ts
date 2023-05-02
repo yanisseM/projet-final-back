@@ -22,6 +22,18 @@ export class ProduitService{
     async createProduit(produit : Omit<IProduit, 'id'>): Promise<Produit>{
         return await this.produitRepository.save(produit);
     }
+    async deleteProduit(id : number ): Promise<Produit>{
 
+            const produit = await this.produitRepository.delete({id});
+        
+            if(!produit){
+        
+              throw new NotFoundException("Ce produit n'existe pas..");
+        
+            }
+        
+           return ; 
+        
+         }
     // async deleteProduit(id : number ): Promise
 }
