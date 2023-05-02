@@ -1,9 +1,10 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { Produit } from "./entities/produit.entity";
 import { IProduit } from "./interface/produit.interface";
+import { ProduitRepository } from "./repositories/produit.repository";
 
 @Injectable()
-export class ProduitSevice{
+export class ProduitService{
     constructor(readonly produitRepository: ProduitRepository){}
 
     getProduits():Promise<Produit[]>{
@@ -21,4 +22,6 @@ export class ProduitSevice{
     async createProduit(produit : Omit<IProduit, 'id'>): Promise<Produit>{
         return await this.produitRepository.save(produit);
     }
+
+    // async deleteProduit(id : number ): Promise
 }
