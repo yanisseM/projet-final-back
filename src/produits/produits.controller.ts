@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { AuthentificationGuard } from 'src/guards/authentification.guard';
 import { CreateProduitDto } from './dtos/create-produit.dto';
 import { Produit } from './entities/produit.entity';
@@ -23,11 +23,16 @@ export class ProduitsController{
         return this.produitService.createProduit(produit);
     }
 
-    // @UseGuards(AuthentificationGuard)
+    @UseGuards(AuthentificationGuard)
     @Delete(':id')
     deleteProduit(@Param('id') produitId:number){
         return this.produitService.deleteProduit(produitId);
     }
     
+    @UseGuards(AuthentificationGuard)
+    @Patch(':id')
+    updateProduit(@Param('id') produitId:Number, @Body() updateProduitDto: UpdateProduitDto){
+        return this.produitService.update(produitId, updateProduitDto);
+    }
 
 }
