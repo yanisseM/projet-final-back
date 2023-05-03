@@ -3,6 +3,7 @@ import { AuthentificationGuard } from 'src/guards/authentification.guard';
 import { CreateProduitDto } from './dtos/create-produit.dto';
 import { Produit } from './entities/produit.entity';
 import { ProduitService } from './produits.service';
+import { UpdateProduitDto } from './dtos/update-produit.dto';
 @Controller('produits')
 export class ProduitsController{
     constructor(readonly produitService: ProduitService){}

@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { Produit } from "./entities/produit.entity";
 import { IProduit } from "./interface/produit.interface";
 import { ProduitRepository } from "./repositories/produit.repository";
+import { UpdateProduitDto } from "./dtos/update-produit.dto";
 
 @Injectable()
 export class ProduitService{
@@ -30,8 +31,8 @@ export class ProduitService{
         return ; 
     }
 
-    async updateProduit(id : number): Promise<Produit>{
-        const produit = await this.produitRepository.update({id});
+    async updateProduit(id : number, updateProduitDto : UpdateProduitDto): Promise<Produit>{
+        const produit = await this.produitRepository.update({id}, updateProduitDto);
         if(!produit){
             throw new NotFoundException("Ce produit n'existe pas..");
           }
