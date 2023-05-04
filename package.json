@@ -1,7 +1,7 @@
 {
   "name": "projet-final",
   "version": "0.0.1",
-  "description": "",
+  "description": "Ce projet correspond à la partie Back de notre projet de site de vente en ligne d'article de sport. Il vient compléter notre partie front et est codé en Nest.js.\r Afin de mettre en place la connexion front/back nous avons mis en place des routes (Get, Post, Patch, Delete). Nous avons définis une entité \"produit\" qui correspond aux articles sur notre site, puis un Enum qui décrit le type d'article disponible (dans notre cas, maillots, ballons, crampons).\r Une connexion à une base de données MySQL contenant nos données et un système d'authentification qui permet la modification, l'ajout ou la suppression d'articles si nous possedons une adresse \"@estiam.com\".\r Afin de lancer notre back il est nécessaire d'installer notre projet sur son PC, de se rendre à l'emplacement du projet sur l'invite de commande et faire la commande suivante : \"npm start\".",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -27,6 +27,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "mysql": "^2.18.1",
+    "mysql2": "^3.2.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -70,5 +71,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
   }
 }
